@@ -1,0 +1,7 @@
+apiVersion: foo.example.com/v1alpha1
+kind: Debug
+metadata:
+  name: example-debug
+spec:
+  # Add fields here
+  size: 3
