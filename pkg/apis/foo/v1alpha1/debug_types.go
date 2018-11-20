@@ -31,6 +31,8 @@ type Debug struct {
 	Status DebugStatus `json:"status,omitempty"`
 }
 
+// +genclient
+// +genclient:nonNamespaced
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 // DebugList contains a list of Debug
