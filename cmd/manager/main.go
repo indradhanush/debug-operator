@@ -7,6 +7,7 @@ import (
 	"runtime"
 
 	"github.com/indradhanush/debug-operator/pkg/apis"
+	"github.com/indradhanush/debug-operator/pkg/client/clientset/versioned/typed/foo/v1alpha1"
 	"github.com/indradhanush/debug-operator/pkg/controller"
 	"github.com/operator-framework/operator-sdk/pkg/k8sutil"
 	sdkVersion "github.com/operator-framework/operator-sdk/version"
@@ -69,6 +70,11 @@ func main() {
 	}
 
 	log.Info("Starting the Cmd.")
+
+	_, err := v1alpha1.NewForConfig(cfg)
+	if err != nil {
+		log.Error(err, "failed to create debug client")
+	}
 
 	// Start the Cmd
 	if err := mgr.Start(signals.SetupSignalHandler()); err != nil {
