@@ -19,6 +19,8 @@ type DebugStatus struct {
 	// Important: Run "operator-sdk generate k8s" to regenerate code after modifying this file
 }
 
+// +genclient
+// +genclient:nonNamespaced
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 // Debug is the Schema for the debugs API
@@ -31,8 +33,6 @@ type Debug struct {
 	Status DebugStatus `json:"status,omitempty"`
 }
 
-// +genclient
-// +genclient:nonNamespaced
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
 
 // DebugList contains a list of Debug
