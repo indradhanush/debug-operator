@@ -71,7 +71,7 @@ func main() {
 
 	log.Info("Starting the Cmd.")
 
-	_, err := v1alpha1.NewForConfig(cfg)
+	_, err = v1alpha1.NewForConfig(cfg)
 	if err != nil {
 		log.Error(err, "failed to create debug client")
 	}
