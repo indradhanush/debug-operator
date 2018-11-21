@@ -27,7 +27,7 @@ import (
 
 type FooV1alpha1Interface interface {
 	RESTClient() rest.Interface
-	DebugListsGetter
+	DebugsGetter
 }
 
 // FooV1alpha1Client is used to interact with features provided by the foo.example.com group.
@@ -35,8 +35,8 @@ type FooV1alpha1Client struct {
 	restClient rest.Interface
 }
 
-func (c *FooV1alpha1Client) DebugLists() DebugListInterface {
-	return newDebugLists(c)
+func (c *FooV1alpha1Client) Debugs() DebugInterface {
+	return newDebugs(c)
 }
 
 // NewForConfig creates a new FooV1alpha1Client for the given config.

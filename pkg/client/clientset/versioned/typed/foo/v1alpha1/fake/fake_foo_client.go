@@ -28,8 +28,8 @@ type FakeFooV1alpha1 struct {
 	*testing.Fake
 }
 
-func (c *FakeFooV1alpha1) DebugLists() v1alpha1.DebugListInterface {
-	return &FakeDebugLists{c}
+func (c *FakeFooV1alpha1) Debugs() v1alpha1.DebugInterface {
+	return &FakeDebugs{c}
 }
 
 // RESTClient returns a RESTClient that is used to communicate
