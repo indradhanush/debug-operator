@@ -82,8 +82,8 @@ type ReconcileDebug struct {
 // The Controller will requeue the Request to be processed again if the returned error is non-nil or
 // Result.Requeue is true, otherwise upon completion it will remove the work from the queue.
 func (r *ReconcileDebug) Reconcile(request reconcile.Request) (reconcile.Result, error) {
-	reqLogger := reqLogger.WithValues("Request.Namespace", request.Namespace, "Requst.Name", request.Name)
-	reqLogger.Info("Reconciling Debug")
+	// reqLogger := reqLogger.WithValues("Request.Namespace", request.Namespace, "Requst.Name", request.Name)
+	// reqLogger.Info("Reconciling Debug")
 
 	// Fetch the Debug instance
 	instance := &foov1alpha1.Debug{}
@@ -111,7 +111,7 @@ func (r *ReconcileDebug) Reconcile(request reconcile.Request) (reconcile.Result,
 	found := &corev1.Pod{}
 	err = r.client.Get(context.TODO(), types.NamespacedName{Name: pod.Name, Namespace: pod.Namespace}, found)
 	if err != nil && errors.IsNotFound(err) {
-		reqLogger.Info("Creating a new Pod", "Pod.Namespace", pod.Namespace, "Pod.Name", pod.Name)
+		// reqLogger.Info("Creating a new Pod", "Pod.Namespace", pod.Namespace, "Pod.Name", pod.Name)
 		err = r.client.Create(context.TODO(), pod)
 		if err != nil {
 			return reconcile.Result{}, err
@@ -124,7 +124,7 @@ func (r *ReconcileDebug) Reconcile(request reconcile.Request) (reconcile.Result,
 	}
 
 	// Pod already exists - don't requeue
-	reqLogger.Info("Skip reconcile: Pod already exists", "Pod.Namespace", found.Namespace, "Pod.Name", found.Name)
+	// reqLogger.Info("Skip reconcile: Pod already exists", "Pod.Namespace", found.Namespace, "Pod.Name", found.Name)
 	return reconcile.Result{}, nil
 }
 
