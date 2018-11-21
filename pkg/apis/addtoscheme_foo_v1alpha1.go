@@ -1,7 +1,7 @@
 package apis
 
 import (
-	"github.com/indradhanush/k8s-codegen-test/debug-operator/pkg/apis/foo/v1alpha1"
+	"github.com/indradhanush/debug-operator/pkg/apis/foo/v1alpha1"
 )
 
 func init() {

@@ -6,8 +6,8 @@ import (
 	"os"
 	"runtime"
 
-	"github.com/indradhanush/k8s-codegen-test/debug-operator/pkg/apis"
-	"github.com/indradhanush/k8s-codegen-test/debug-operator/pkg/controller"
+	"github.com/indradhanush/debug-operator/pkg/apis"
+	"github.com/indradhanush/debug-operator/pkg/controller"
 	"github.com/operator-framework/operator-sdk/pkg/k8sutil"
 	sdkVersion "github.com/operator-framework/operator-sdk/version"
 	_ "k8s.io/client-go/plugin/pkg/client/auth/gcp"

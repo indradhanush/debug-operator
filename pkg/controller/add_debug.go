@@ -1,7 +1,7 @@
 package controller
 
 import (
-	"github.com/indradhanush/k8s-codegen-test/debug-operator/pkg/controller/debug"
+	"github.com/indradhanush/debug-operator/pkg/controller/debug"
 )
 
 func init() {
